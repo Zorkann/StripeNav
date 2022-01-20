@@ -1,0 +1,32 @@
+@import "../variables.css";
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--products-width);
+  height: var(--products-height);
+  opacity: 0;
+  padding: var(--padding);
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25),
+    0 30px 60px -30px rgba(0, 0, 0, 0.3);
+  transform-origin: 0 0;
+  transition: transform var(--transition-speed), opacity var(--transition-speed);
+}
+
+.content {
+  position: absolute;
+  overflow: hidden;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  padding: var(--padding);
+  transition: transform var(--transition-speed), opacity var(--transition-speed);
+}
+
+.open {
+  opacity: 1;
+}

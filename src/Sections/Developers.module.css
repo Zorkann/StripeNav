@@ -1,0 +1,52 @@
+.sectionDevelopers {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.2s;
+  overflow: hidden;
+
+  width: var(--developers-width);
+  height: var(--developers-height);
+}
+
+.navList {
+  color: #6772e5;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.navList li {
+  padding: 8px 0;
+}
+
+.subtle {
+  color: #7b8ca3;
+  font-size: 14px;
+  margin: 3px 0 32px 0;
+}
+
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+h4 {
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0.025em;
+  color: #8898aa;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.navListSubtle {
+  color: #6772e5;
+  font-size: 14px;
+}
+
+.navListSubtle li {
+  padding: 6px 0;
+}
+
+.active {
+  opacity: 1;
+}

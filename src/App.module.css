@@ -1,0 +1,37 @@
+.popover {
+  position: absolute;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transform-origin: center -20px;
+  transform: rotateX(-15deg);
+  transition: transform var(--transition-duration),
+    opacity var(--transition-duration);
+  background: red;
+  display: inline-block;
+}
+
+.popover.open {
+  opacity: 1;
+  transform: rotateX(0);
+}
+
+.arrow {
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  opacity: 0;
+  background: white;
+  box-shadow: -3px -3px 5px rgba(9, 10, 15, 0.05);
+  border-radius: 4px 0 0 0;
+  transform: rotate(45deg);
+  transition: transform var(--transition-speed), opacity var(--transition-speed);
+  will-change: transform;
+}
+
+.arrow.open {
+  opacity: 1;
+}

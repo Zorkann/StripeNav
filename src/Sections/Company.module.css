@@ -1,0 +1,23 @@
+.sectionCompany {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.2s;
+  overflow: hidden;
+
+  width: var(--company-width);
+  height: var(--company-height);
+}
+
+.navList {
+  color: #6772e5;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.navList li {
+  padding: 8px 0;
+}
+
+.active {
+  opacity: 1;
+}

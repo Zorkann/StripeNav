@@ -1,0 +1,21 @@
+.nav {
+  display: flex;
+}
+
+.navLink {
+  height: 50px;
+  padding: 0 25px;
+  line-height: 50px;
+  text-transform: capitalize;
+  border: 0;
+  font-size: 16px;
+  color: white;
+  background: none;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  transition: opacity 0.2s;
+}
+
+.navLink:hover {
+  opacity: 0.5;
+}
