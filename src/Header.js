@@ -1,15 +1,13 @@
 import { forwardRef } from "react";
 import styles from "./Header.module.css";
 
-const sections = ["products", "developers", "company"];
-
 const Header = forwardRef(
-  ({ onMouseEnter, onMouseLeave, children }, firstButtonRef) => {
+  ({ onMouseEnter, onMouseLeave, sections, children }, firstButtonRef) => {
     return (
-      <header className="header">
+      <header>
         <section>
           <nav className={styles.nav}>
-            {sections.map((ele, i) => {
+            {sections.map(({ name }, i) => {
               return (
                 <button
                   ref={(ref) =>
@@ -18,10 +16,10 @@ const Header = forwardRef(
                   onMouseEnter={onMouseEnter}
                   onMouseLeave={onMouseLeave}
                   className={styles.navLink}
-                  data-nav={ele}
+                  data-nav={name}
                   key={i}
                 >
-                  {ele}
+                  {name}
                 </button>
               );
             })}

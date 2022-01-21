@@ -4,12 +4,15 @@ import styles from "./App.module.css";
 import Sections from "./Sections/Sections";
 import Header from "./Header";
 import clsx from "clsx";
+import Company from "./Sections/Company";
+import Developers from "./Sections/Developers";
+import Products from "./Sections/Products";
 
-const dimensions = {
-  products: { width: 490, height: 280, x: 0 },
-  developers: { width: 390, height: 266, x: 100 },
-  company: { width: 260, height: 296, x: 200 }
-};
+const sections = [
+  { name: "products", Component: Products },
+  { name: "developers", Component: Developers },
+  { name: "company", Component: Company }
+];
 
 export default function App() {
   const [selected, setSelected] = useState(null);
@@ -27,31 +30,32 @@ export default function App() {
     setSelected(null);
   };
 
-  const moveArrow = (rect) => {
-    const middleOfTheButton = rect.left + rect.width / 2;
+  const moveArrow = (buttonRect) => {
+    const middleOfTheButton = buttonRect.left + buttonRect.width / 2;
     arrowRef.current.style.transform = `translateX(${middleOfTheButton}px) rotate(45deg)`;
   };
 
   useEffect(() => {
     if (selected) {
-      const rect = selectedButtonRef.current.getBoundingClientRect();
-      moveArrow(rect);
+      const buttonRect = selectedButtonRef.current.getBoundingClientRect();
+      moveArrow(buttonRect);
     }
   }, [selected]);
 
   useEffect(() => {
-    const rect = firstButtonRef.current.getBoundingClientRect();
-    moveArrow(rect);
+    const buttonRect = firstButtonRef.current.getBoundingClientRect();
+    moveArrow(buttonRect);
   }, []);
 
   return (
     <Header
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      sections={sections}
       ref={firstButtonRef}
     >
       <div className={clsx(styles.popover, { [styles.open]: selected })}>
-        <Sections selected={selected} dimensions={dimensions} />
+        <Sections selected={selected} sections={sections} />
         <div
           className={clsx(styles.arrow, { [styles.open]: selected })}
           ref={arrowRef}
